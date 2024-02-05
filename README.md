@@ -15,7 +15,7 @@ $$\sqrt{\langle x,x \rangle}=\sqrt{xx^{\top}}=\sqrt{\sum_{i=1}^m x_i ^2}$$
 ### Euclidean distance
 For same $x$ and $z$ above, consider these 2 matrices: $X=[ x_1,\dots, x_n]\in{\mathbb{R}}^{n\times d}$, where the $i^{th}$ row is a vector $\vec x_i$ and similarly $Z=[ z_1,\dots, z_m]\in{\mathbb{R}}^{m\times d}$. And the Euclidean distance is defined by:
 
-$$D_{ij}=\sqrt{(\vec x_i-\vec z_j)(\vec x_i-\vec z_j)^\top}.$$
+$$D_{ij}=\sqrt{( x_i- z_j)( x_i- z_j)^\top}.$$
 
 Per se definition, the following is a traditional method to compute the Euclidean distance by looping thru every dimension of vector $x$ and $z$:
 
@@ -37,3 +37,8 @@ def l2distanceSlow(X,Z=None):
 ```
 
 This seems to work well until the dimension goes to larger than 500, which would cost 20-30 seconds according to computers' CPU. 
+
+A new method creates 3 supplementary matrix, $S,R,G$ s.t.:
+$G$(the Gram matrix/inner product matrix ) $=G_{ij}=\mathbf{x}_i\mathbf{z}_j^\top $
+
+Whereas $S_{ij}=\mathbf{x}_i\mathbf{x}_i^\top$, $R_{ij}=\mathbf{z}_j\mathbf{z}_j^\top.$
