@@ -80,4 +80,4 @@ $\square$
 
 Using this algo., we can use `numpy` to easily achieve without a single loop.
 
-The code is divided into 2 parts, where `ip.py` achieves the inner product part (matrix $G$) and the `eudist.py` importing methods from `ip.py` achieves the matrix $S$, matrix $R$ and linear combination part.
+The code is divided into 2 parts, where `inprd.py` achieves the inner product part (matrix $G$) and the `eudist.py` importing methods from `ip.py` achieves the matrix $S$, matrix $R$ and linear combination part.
