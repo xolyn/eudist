@@ -71,8 +71,7 @@ $$
 &=x_ix_i^T-\sum_{k=1}^n x_{ik}z^T_{kj}-\sum_{k=1}^n z_{jk}x_{ik} +z_jz_j^T\\
 &=x_ix_i^T-\sum_{k=1}^n x_{ik}z^T_{kj}-\sum_{k=1}^n x_{ik}z^T_{kj} +z_jz_j^T\\
 \Rightarrow D^2&=S-2G+R \text{ (by def.)}
-\end{align}
-
+\end{align}\\
 \quad 
 $$
 
