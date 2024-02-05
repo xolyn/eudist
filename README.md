@@ -39,7 +39,7 @@ def l2distanceSlow(X,Z=None):
 This seems to work well until the dimension goes to larger than 500, which would cost 20-30 seconds according to computers' CPU. 
 
 A new method creates 3 supplementary matrix, $S,R,G$ s.t.:
-$G$(the Gram matrix/inner product matrix ) $=G_{ij}=\x_i\z_j^\top $
+$G$(the Gram matrix/inner product matrix ) $=G_{ij}=x_iz_j^\top $
 
 Whereas $S_{ij}=x_ix_i^{\top}$, $R_{ij}=z_jz_j^{\top}.$
 
@@ -47,20 +47,20 @@ A visualization of matrices $S$ and $R$ is like:
 
 $$
 S = \begin{bmatrix}
-\x_1 \x_1^\top & \x_1 \x_1^\top & \cdots & \x_1 \x_1^\top\\
-\x_2 \x_2^\top & \x_2 \x_2^\top & \cdots & \x_2 \x_2^\top\\
+x_1 x_1^\top & x_1 x_1^\top & \cdots & x_1 x_1^\top\\
+x_2 x_2^\top & x_2 x_2^\top & \cdots & x_2 x_2^\top\\
 \vdots & \vdots & \ddots & \vdots\\
-\x_n \x_n^\top & \x_n \x_n^\top & \cdots & \x_n \x_n^\top\\
+x_n x_n^\top & x_n x_n^\top & \cdots & x_n x_n^\top\\
 \end{bmatrix}, \ 
 R = \begin{bmatrix}
-\z_1 \z_1^\top & \z_2 \z_2^\top & \cdots & \z_m \z_m^\top\\
-\z_1 \z_1^\top & \z_2 \z_2^\top & \cdots & \z_m \z_m^\top\\
+z_1 z_1^\top & z_2 z_2^\top & \cdots & z_m z_m^\top\\
+z_1 z_1^\top & z_2 z_2^\top & \cdots & z_m z_m^\top\\
 \vdots & \vdots & \ddots & \vdots\\
-\z_1 \z_1^\top & \z_2 \z_2^\top & \cdots & \z_m \z_m^\top\\
+z_1 z_1^\top & z_2 z_2^\top & \cdots & z_m z_m^\top\\
 \end{bmatrix}.
 $$
 
-The cleverness of this prompt is that, we can proof that the distance matrix $D^2$, which is by definition $=(\mathbf{x}_i-\mathbf{z}_j)(\mathbf{x}_i-\mathbf{z}_j)^\top$ can be expressed as a linear combination of the matrix $S, G, R$:
+The cleverness of this prompt is that we can prove that the distance matrix $D^2$, which is by definition $=(\mathbf{x}_i-\mathbf{z}_j)(\mathbf{x}_i-\mathbf{z}_j)^\top$ can be expressed as a linear combination of the matrix $S, G, R$:
 
 $$
 \forall i,j: 
@@ -78,4 +78,4 @@ $$
 
 Using this algo., we can use `numpy` to easily achieve without a single loop.
 
-*The code is divided into 2 part, where `ip.py` achieves the inner product part (matrix $G$) and the `eudist.py` importing methods from `ip.py` achieves the matrix $S$, matrix $R$ and linear combination part.*
+*The code is divided into 2 parts, where `ip.py` achieves the inner product part (matrix $G$) and the `eudist.py` importing methods from `ip.py` achieves the matrix $S$, matrix $R$ and linear combination part.*
