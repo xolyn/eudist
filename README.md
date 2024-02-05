@@ -20,7 +20,7 @@ $$D_{ij}=\sqrt{( x_i- z_j)( x_i- z_j)^\top}.$$
 Per se definition, the following is a traditional method to compute the Euclidean distance by looping thru every dimension of vector $x$ and $z$:
 
 ```python
-# Cr: CS5780 staff@Cornell
+# Cr: CS5780 faculties@Cornell
 def l2distanceSlow(X,Z=None):
     if Z is None:
         Z = X
