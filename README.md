@@ -62,9 +62,7 @@ $$
 
 The cleverness of this prompt is that we can prove that the distance matrix $D^2$, which is by definition $=(\mathbf{x}_i-\mathbf{z}_j)(\mathbf{x}_i-\mathbf{z}_j)^\top$ can be expressed as a linear combination of the matrix $S, G, R$:
 
-$$
-\forall i,j:
-$$
+$\forall i,j:$
 
 $$
 \begin{align}
@@ -76,8 +74,9 @@ D^2_{ij}&=(x_i-z_j)(x_i-z_j)^T\\
 &=x_ix_i^T-\sum_{k=1}^n x_{ik}z^T_{kj}-\sum_{k=1}^n x_{ik}z^T_{kj} +z_jz_j^T\\
 \Rightarrow D^2&=S-2G+R \text{ (by def.)}
 \end{align}\\
-\square
 $$
+
+$\square$
 
 Using this algo., we can use `numpy` to easily achieve without a single loop.
 
