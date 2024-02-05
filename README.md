@@ -81,3 +81,5 @@ $\square$
 Using this algo., we can use `numpy` to easily achieve without a single loop.
 
 The code is divided into 2 parts, where `inprd.py` achieves the inner product part (matrix $G$) and the `eudist.py` importing methods from `ip.py` achieves the matrix $S$, matrix $R$ and linear combination part.
+
+This method will contribute around **2000** (even more when dimension still goes up) times faster than the traditional one using loops!
